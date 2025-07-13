@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: auth-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/fitness-auth-sb
+    username: root
+    password: BERENICEroberto*04
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+jwt:
+  secret: QzU2eXpQbW56N2JDUHlWRmtHbWhnQTRmZWR6YmhrVjE=
+  expiration: 86400000
+
