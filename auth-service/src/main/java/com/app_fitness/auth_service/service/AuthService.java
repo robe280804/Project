@@ -54,7 +54,7 @@ public class AuthService {
 
         return RegisterResponseDto.builder()
                 .name(user.getName())
-                .surname(user.getSurname()) 
+                .surname(user.getSurname())
                 .email(user.getEmail())
                 .build();
     }
@@ -75,6 +75,7 @@ public class AuthService {
 
             log.info("[LOGIN] Login andato a buon fine per {}", request.getEmail());
             return LoginResponseDto.builder()
+                    .id(userDetails.getId())
                     .email(userDetails.getUsername())
                     .token(token)
                     .build();
@@ -87,5 +88,11 @@ public class AuthService {
             throw new RuntimeException("Errore " + ex);
         }
 
+    }
+
+    public Boolean validate(String id) {
+        log.info("[VALIDATION] Validazione di user {}", id);
+
+        return userRepository.existsById(id);
     }
 }

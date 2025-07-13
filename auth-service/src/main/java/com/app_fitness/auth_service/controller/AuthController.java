@@ -7,10 +7,7 @@ import com.app_fitness.auth_service.dto.RegisterResponseDto;
 import com.app_fitness.auth_service.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/auth")
@@ -24,8 +21,13 @@ public class AuthController {
         return ResponseEntity.ok(authService.register(request));
     }
 
-    @PostMapping("login")
+    @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto request){
         return ResponseEntity.ok(authService.login(request));
+    }
+
+    @GetMapping("/validate/{id}")
+    public ResponseEntity<Boolean> validUser(@PathVariable String id){
+        return ResponseEntity.ok(authService.validate(id));
     }
 }
