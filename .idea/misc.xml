@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/activity-service/pom.xml" />
         <option value="$PROJECT_DIR$/training-card-service/pom.xml" />
         <option value="$PROJECT_DIR$/common-config/pom.xml" />
+        <option value="$PROJECT_DIR$/common-files/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

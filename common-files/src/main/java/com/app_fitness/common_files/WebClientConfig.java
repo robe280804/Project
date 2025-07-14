@@ -1,4 +1,4 @@
-package com.app_fitness.activity_service.config;
+package com.app_fitness.common_files;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
