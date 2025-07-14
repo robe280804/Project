@@ -1,0 +1,18 @@
+server:
+  port: 8083
+
+spring:
+  application:
+   name: training-card-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/App_Fitness_Ai
+      database: App_Fitness_Ai
+
+rabbitmq:
+  exchange:
+    name: ai-fitness.exchange
+  queue:
+    name: ai-activity.queue
+  routing:
+    key: ai-activity.tracking

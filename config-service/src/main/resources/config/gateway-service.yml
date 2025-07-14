@@ -16,6 +16,10 @@ spring:
           uri: lb://ACTIVITY-SERVICE
           predicates:
             - Path=/api/user/preferences/**
+        - id: training-card-service
+          uri: lb://TRAINING-CARD-SERVICE
+          predicates:
+            - Path=/api/user/card/**
 
 eureka:
   client:
