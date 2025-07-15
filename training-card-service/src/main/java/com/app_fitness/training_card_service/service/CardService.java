@@ -1,5 +1,6 @@
 package com.app_fitness.training_card_service.service;
 
+import com.app_fitness.common_files.UserValidation;
 import com.app_fitness.training_card_service.model.DailyCard;
 import com.app_fitness.training_card_service.model.Exercise;
 import com.app_fitness.training_card_service.model.TrainingCard;
@@ -13,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class CardService {
     private final GeminiService geminiService;
     private final UserValidation userValidation;
     private final CardRepository cardRepository;
+
 
     public TrainingCard generaCard(TrainingPreferences preferences) throws JsonProcessingException {
         String prompt = createPrompt(preferences);

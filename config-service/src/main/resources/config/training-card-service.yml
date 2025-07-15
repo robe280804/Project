@@ -16,3 +16,4 @@ rabbitmq:
     name: ai-activity.queue
   routing:
     key: ai-activity.tracking
+

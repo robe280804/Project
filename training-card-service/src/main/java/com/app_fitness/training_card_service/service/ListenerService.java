@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Mono;
 
 @Service
 @Slf4j
@@ -21,7 +20,12 @@ public class ListenerService {
     @RabbitListener(queues = "ai-activity.queue")
     public void processActivity(TrainingPreferences preferences) throws JsonProcessingException {
         log.info("[LISTENER] Attività ricevuta");
+        try {
         TrainingCard trainingCard = cardService.generaCard(preferences);
         cardRepository.save(trainingCard);
+        } catch (Exception ex) {
+            log.error("[LISTENER] Errore durante la generazione/salvataggio della training card", ex);
+
+        }
     }
 }
