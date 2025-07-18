@@ -1,4 +1,4 @@
-package com.app_fitness.common_files;
+package com.app_fitness.common_files.validation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;

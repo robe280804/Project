@@ -4,7 +4,7 @@ import com.app_fitness.activity_service.dto.PreferencesRequestDto;
 import com.app_fitness.activity_service.dto.PreferencesResponseDto;
 import com.app_fitness.activity_service.model.TrainingPreferences;
 import com.app_fitness.activity_service.repository.PreferencesRepository;
-import com.app_fitness.common_files.UserValidation;
+import com.app_fitness.common_files.validation.UserValidation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

@@ -1,4 +1,4 @@
-package com.app_fitness.common_files;
+package com.app_fitness.common_files.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;

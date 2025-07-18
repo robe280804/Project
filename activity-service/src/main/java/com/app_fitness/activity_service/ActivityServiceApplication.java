@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 		(scanBasePackages = {
 		"com.app_fitness.activity_service",
-		"com.app_fitness.common_files"
+				"com.app_fitness.common_files.validation",
+				"com.app_fitness.common_files.config",
+				"com.app_fitness.common_files.security.filter"
 })
 public class ActivityServiceApplication {
 

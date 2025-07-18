@@ -1,6 +1,6 @@
 package com.app_fitness.training_card_service.service;
 
-import com.app_fitness.common_files.UserValidation;
+import com.app_fitness.common_files.validation.UserValidation;
 import com.app_fitness.training_card_service.model.DailyCard;
 import com.app_fitness.training_card_service.model.Exercise;
 import com.app_fitness.training_card_service.model.TrainingCard;

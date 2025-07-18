@@ -21,6 +21,16 @@ spring:
           predicates:
             - Path=/api/user/card/**
 
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+jwt:
+  secret: QzU2eXpQbW56N2JDUHlWRmtHbWhnQTRmZWR6YmhrVjE=
+  expiration: 86400000
+
 eureka:
   client:
     serviceUrl:

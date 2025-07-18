@@ -8,7 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 		(scanBasePackages = {
 				"com.app_fitness.training_card_service",
-				"com.app_fitness.common_files"
+				"com.app_fitness.common_files.config",
+				"com.app_fitness.common_files.security.filter",
+				"com.app_fitness.common_files.validation"
 		})
 public class TrainingCardServiceApplication {
 
