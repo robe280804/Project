@@ -19,6 +19,7 @@ services:
       MYSQL_DATABASE: fitness-auth-db
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./scripts/mysql/seed.sql:/docker-entrypoint-initdb.d/seed.sql
 
   mongo:
     image: mongo:7

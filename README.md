@@ -37,3 +37,8 @@ Dalla root del progetto, in Windows PowerShell:
 
 docker compose build
 docker compose up -d
+docker compose restart gateway-service auth-service activity-service training-card-service 
+
+- Per visualizzare i log dei microservizi: docker logs -f nome-microservizio
+
+(Eseguo il restart per connettere tutti i microservizi all'eureka, altrimenti non risultano connessi)
