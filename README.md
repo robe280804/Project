@@ -35,9 +35,9 @@ Ogni microservizio è autonomo e comunicano via REST o Eventi (RabbitMQ).
 
 Dalla root del progetto, in Windows PowerShell:
 
-docker compose build
-docker compose up -d
-docker compose restart gateway-service auth-service activity-service training-card-service 
+- docker compose build
+- docker compose up -d
+- docker compose restart gateway-service auth-service activity-service training-card-service 
 
 - Per visualizzare i log dei microservizi: docker logs -f nome-microservizio
 
