@@ -6,7 +6,7 @@ spring:
    name: training-card-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/App_Fitness_Ai
+      uri: mongodb://mongo:27017/App_Fitness_Ai
       database: App_Fitness_Ai
 
 rabbitmq:
@@ -16,4 +16,9 @@ rabbitmq:
     name: ai-activity.queue
   routing:
     key: ai-activity.tracking
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://eureka:8761/eureka/
 

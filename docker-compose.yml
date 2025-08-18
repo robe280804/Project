@@ -1,0 +1,125 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: aiuser
+      RABBITMQ_DEFAULT_PASS: aipass
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "BERENICEroberto*04"
+      MYSQL_DATABASE: fitness-auth-db
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  eureka:
+    build:
+      context: .
+      dockerfile: eureka/Dockerfile
+    container_name: eureka
+    ports:
+      - "8761:8761"
+    environment:
+      SPRING_CONFIG_IMPORT: "optional:configserver:http://config-service:8888"
+
+  config-service:
+    build:
+      context: .
+      dockerfile: config-service/Dockerfile
+    container_name: config-service
+    ports:
+      - "8888:8888"
+
+  gateway-service:
+    build:
+      context: .
+      dockerfile: gateway-service/Dockerfile
+    container_name: gateway-service
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_CONFIG_IMPORT: "optional:configserver:http://config-service:8888"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka/"
+    depends_on:
+      - config-service
+      - eureka
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: auth-service/Dockerfile
+    container_name: auth-service
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_CONFIG_IMPORT: "optional:configserver:http://config-service:8888"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka/"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/fitness-auth-db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "BERENICEroberto*04"
+    depends_on:
+      - config-service
+      - eureka
+      - mysql
+
+  activity-service:
+    build:
+      context: .
+      dockerfile: activity-service/Dockerfile
+    container_name: activity-service
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_CONFIG_IMPORT: "optional:configserver:http://config-service:8888"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka/"
+      SPRING_DATA_MONGODB_URI: "mongodb://mongo:27017/App_Fitness_Ai"
+      SPRING_RABBITMQ_HOST: "rabbitmq"
+      SPRING_RABBITMQ_USERNAME: "aiuser"
+      SPRING_RABBITMQ_PASSWORD: "aipass"
+    depends_on:
+      - config-service
+      - eureka
+      - mongo
+      - rabbitmq
+
+  training-card-service:
+    build:
+      context: .
+      dockerfile: training-card-service/Dockerfile
+    container_name: training-card-service
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_CONFIG_IMPORT: "optional:configserver:http://config-service:8888"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka:8761/eureka/"
+      SPRING_DATA_MONGODB_URI: "mongodb://mongo:27017/App_Fitness_Ai"
+      SPRING_RABBITMQ_HOST: "rabbitmq"
+      SPRING_RABBITMQ_USERNAME: "aiuser"
+      SPRING_RABBITMQ_PASSWORD: "aipass"
+      GEMINI_API_URL: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key="
+      GEMINI_API_KEY: "dummy-key"
+    depends_on:
+      - config-service
+      - eureka
+      - mongo
+      - rabbitmq
+
+volumes:
+  mysql_data:
+  mongo_data: 

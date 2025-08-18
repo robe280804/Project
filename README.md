@@ -28,3 +28,12 @@ Ogni microservizio è autonomo e comunicano via REST o Eventi (RabbitMQ).
 - RabbitMQ
 - Docker 
 - Gemini API
+
+## DOCKER 
+
+▶️ Avvio con Docker Compose
+
+Dalla root del progetto, in Windows PowerShell:
+
+docker compose build
+docker compose up -d
