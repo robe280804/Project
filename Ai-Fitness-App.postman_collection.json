@@ -82,7 +82,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/auth/validate/232d2820-fac1-4858-a27c-8de950fc8872",
+							"raw": "http://localhost:8080/api/auth/validate/240f2a25-1181-4681-8ce3-d5aa3c2d4e94",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -92,7 +92,7 @@
 								"api",
 								"auth",
 								"validate",
-								"232d2820-fac1-4858-a27c-8de950fc8872"
+								"240f2a25-1181-4681-8ce3-d5aa3c2d4e94"
 							]
 						}
 					},
@@ -110,13 +110,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyMzJkMjgyMC1mYWMxLTQ4NTgtYTI3Yy04ZGU5NTBmYzg4NzIiLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImVtYWlsIjoicm9iZXJ0b3NvZGluaTFAZ21haWwuY29tIiwiaWF0IjoxNzUyODI1MzQ5LCJleHAiOjE3NTI5MTE3NDl9.lDm44n6h1ZQvdheUR3ha88nzy-roAxyaq-KkyKkVOWE",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNDBmMmEyNS0xMTgxLTQ2ODEtOGNlMy1kNWFhM2MyZDRlOTQiLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImVtYWlsIjoicm9iZXJ0b3NvZGluaTFAZ21haWwuY29tIiwiaWF0IjoxNzU2ODAxMTY5LCJleHAiOjE3NTY4ODc1Njl9.7L6SDBaLSqtUhqBJjZuAlN3wjuQ7TxDkuHHn533zsSc",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userId\": \"232d2820-fac1-4858-a27c-8de950fc8872\",\r\n  \"goals\": [\"IPERTROFIA\"],\r\n  \"sessionDuration\": 90,\r\n  \"daysPerWeek\": 5,\r\n  \"freeDays\": [\"LUNEDI\", \"GIOVEDI\", \"VENERDI\", \"SABATO\"],\r\n  \"type\": [\"CORSA\", \"PESI\"],\r\n  \"level\": \"INTERMEDIO\",\r\n  \"additionalMetrics\": {\r\n    \"altezza\": 180,\r\n    \"peso\": 75,\r\n    \"sogliaCardiaca\": 165\r\n  }\r\n}\r\n",
+							"raw": "{\r\n  \"userId\": \"240f2a25-1181-4681-8ce3-d5aa3c2d4e94\",\r\n  \"goals\": [\"IPERTROFIA\"],\r\n  \"sessionDuration\": 90,\r\n  \"daysPerWeek\": 5,\r\n  \"freeDays\": [\"LUNEDI\", \"GIOVEDI\", \"VENERDI\", \"SABATO\"],\r\n  \"type\": [\"CORSA\", \"PESI\"],\r\n  \"level\": \"INTERMEDIO\",\r\n  \"additionalMetrics\": {\r\n    \"altezza\": 180,\r\n    \"peso\": 75,\r\n    \"sogliaCardiaca\": 165\r\n  }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -147,12 +147,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyMzJkMjgyMC1mYWMxLTQ4NTgtYTI3Yy04ZGU5NTBmYzg4NzIiLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImVtYWlsIjoicm9iZXJ0b3NvZGluaTFAZ21haWwuY29tIiwiaWF0IjoxNzUyODI1MzQ5LCJleHAiOjE3NTI5MTE3NDl9.lDm44n6h1ZQvdheUR3ha88nzy-roAxyaq-KkyKkVOWE",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNDBmMmEyNS0xMTgxLTQ2ODEtOGNlMy1kNWFhM2MyZDRlOTQiLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImVtYWlsIjoicm9iZXJ0b3NvZGluaTFAZ21haWwuY29tIiwiaWF0IjoxNzU2ODAxMTY5LCJleHAiOjE3NTY4ODc1Njl9.7L6SDBaLSqtUhqBJjZuAlN3wjuQ7TxDkuHHn533zsSc",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/user/preferences/232d2820-fac1-4858-a27c-8de950fc8872",
+							"raw": "http://localhost:8080/api/user/preferences/240f2a25-1181-4681-8ce3-d5aa3c2d4e94",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -162,7 +162,7 @@
 								"api",
 								"user",
 								"preferences",
-								"232d2820-fac1-4858-a27c-8de950fc8872"
+								"240f2a25-1181-4681-8ce3-d5aa3c2d4e94"
 							]
 						}
 					},
@@ -180,12 +180,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyMzJkMjgyMC1mYWMxLTQ4NTgtYTI3Yy04ZGU5NTBmYzg4NzIiLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImVtYWlsIjoicm9iZXJ0b3NvZGluaTFAZ21haWwuY29tIiwiaWF0IjoxNzUyODI1MzQ5LCJleHAiOjE3NTI5MTE3NDl9.lDm44n6h1ZQvdheUR3ha88nzy-roAxyaq-KkyKkVOWE",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNDBmMmEyNS0xMTgxLTQ2ODEtOGNlMy1kNWFhM2MyZDRlOTQiLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImVtYWlsIjoicm9iZXJ0b3NvZGluaTFAZ21haWwuY29tIiwiaWF0IjoxNzU2ODAxMTY5LCJleHAiOjE3NTY4ODc1Njl9.7L6SDBaLSqtUhqBJjZuAlN3wjuQ7TxDkuHHn533zsSc",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/user/card/232d2820-fac1-4858-a27c-8de950fc8872",
+							"raw": "http://localhost:8080/api/user/card/240f2a25-1181-4681-8ce3-d5aa3c2d4e94",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -195,7 +195,7 @@
 								"api",
 								"user",
 								"card",
-								"232d2820-fac1-4858-a27c-8de950fc8872"
+								"240f2a25-1181-4681-8ce3-d5aa3c2d4e94"
 							]
 						}
 					},

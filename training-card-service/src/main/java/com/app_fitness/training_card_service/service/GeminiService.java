@@ -1,6 +1,7 @@
 package com.app_fitness.training_card_service.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.hc.core5.http.HttpHeaders;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatusCode;
@@ -29,7 +30,7 @@ public class GeminiService {
     @Value("${GEMINI_API_URL}")
     private String geminiUrl;
 
-    @Value(("${GEMINI_API_KEY}"))
+    @Value("${GEMINI_API_KEY}")
     private String geminiKey;
 
     private final WebClient webClient;
@@ -47,8 +48,8 @@ public class GeminiService {
                 });
         try {
             return webClient.post()
-                    .uri(geminiUrl.trim() + geminiKey.trim())
-                    .header("Content-Type", "application/json")
+                    .uri(geminiUrl + "?key=" + geminiKey.trim())
+                    .header(HttpHeaders.CONTENT_TYPE, "application/json")
                     .bodyValue(request)
                     .retrieve()
                     .onStatus(HttpStatusCode::isError, response ->

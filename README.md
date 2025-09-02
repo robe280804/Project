@@ -36,9 +36,8 @@ Ogni microservizio è autonomo e comunicano via REST o Eventi (RabbitMQ).
 Dalla root del progetto, in Windows PowerShell:
 
 - docker compose build
-- docker compose up -d
-- docker compose restart gateway-service auth-service activity-service training-card-service 
+- docker compose up -d eureka config-service
+- docker compose up -d auth-service training-card-service activity-service gateway-service
 
 - Per visualizzare i log dei microservizi: docker logs -f nome-microservizio
 
-(Eseguo il restart per connettere tutti i microservizi all'eureka, altrimenti non risultano connessi)

@@ -31,6 +31,7 @@ public class CardService {
     public TrainingCard generaCard(TrainingPreferences preferences) throws JsonProcessingException {
         String prompt = createPrompt(preferences);
         String response = geminiService.getAnswer(prompt);
+        log.info("id user {}", preferences.getUserId());
         log.info("[GEMINI] Risposta da gemini {}", response);
         return convertAiResponse(preferences, response);
     }
@@ -84,7 +85,9 @@ public class CardService {
             }
 
             trainingCard.setCard(dailyCards);
-            trainingCard.setId(preferences.getId());
+            trainingCard.setUserId(preferences.getUserId());
+            cardRepository.save(trainingCard);
+
             return trainingCard;
 
 
@@ -151,7 +154,10 @@ public class CardService {
         if (!userValidation.userValidation(userId)){
             throw new RuntimeException("User non autorizzato" + userId);
         }
-        return cardRepository.findAllByUserId(userId);
+        List<TrainingCard> cards = cardRepository.findAllByUserId(userId);{}
+        log.info("{}", cards);
+
+        return cards;
     }
 }
 
